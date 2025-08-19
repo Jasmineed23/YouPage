@@ -16,6 +16,7 @@ header {
     padding: 24px 40px 0 40px;
     box-sizing: border-box;
     flex-wrap: wrap;
+    position: relative;
 }
 
 .header-title {
@@ -24,11 +25,14 @@ header {
     letter-spacing: 2px;
     color: #7e57c2;
     font-family: 'Pacifico', cursive;
+    flex: 0 0 auto;
 }
 
 nav {
     display: flex;
     gap: 40px;
+    flex: 1;
+    justify-content: center;
 }
 
 nav a {
@@ -62,15 +66,92 @@ main {
 
 .hero-img {
     flex-shrink: 0;
+    position: relative;
+    animation: float 6s ease-in-out infinite;
 }
 
 .avatar {
-    width: 320px;
-    height: 400px;
+    width: 420px;
+    height: 520px;
     object-fit: cover;
-    border-radius: 30px;
-    box-shadow: 0 4px 24px rgba(100,100,100,0.13);
+    border-radius: 35px;
+    box-shadow: 0 8px 32px rgba(100,100,100,0.15);
     display: block;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    z-index: 1;
+}
+
+.avatar:hover {
+    transform: scale(1.08) rotate(3deg);
+    box-shadow: 0 15px 60px rgba(126, 87, 194, 0.4);
+    border-radius: 45px;
+}
+
+.hero-img::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    background: linear-gradient(45deg, #7e57c2, #b39ddb, #e1bee7, #7e57c2, #d1c4e9);
+    border-radius: 43px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    background-size: 400% 400%;
+    animation: gradientShift 4s ease infinite;
+}
+
+.hero-img:hover::before {
+    opacity: 1;
+}
+
+.hero-img::after {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    background: linear-gradient(45deg, rgba(126, 87, 194, 0.3), rgba(179, 157, 219, 0.3));
+    border-radius: 50px;
+    z-index: -2;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    filter: blur(20px);
+}
+
+.hero-img:hover::after {
+    opacity: 1;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-8px) rotate(1deg);
+    }
+    50% {
+        transform: translateY(-15px) rotate(0deg);
+    }
+    75% {
+        transform: translateY(-8px) rotate(-1deg);
+    }
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .hero-content {
@@ -151,9 +232,6 @@ footer {
 
 /* Theme Toggle Button */
 #theme-toggle {
-    position: absolute;
-    right: 40px;
-    top: 40px;
     background: #7e57c2;
     color: #fff;
     border: none;
@@ -164,7 +242,7 @@ footer {
     cursor: pointer;
     box-shadow: 0 2px 8px rgba(100,100,100,0.2);
     transition: background 0.3s;
-    z-index: 1000;
+    flex: 0 0 auto;
 }
 #theme-toggle:hover {
     background: #333;
@@ -194,19 +272,27 @@ h2.dark-mode {
         padding: 24px 0;
     }
     .avatar {
-        width: 220px;
-        height: 280px;
+        width: 280px;
+        height: 350px;
     }
     .hero-content h1 {
         font-size: 2.2em;
     }
     header {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         gap: 16px;
         padding: 24px 16px 0 16px;
     }
+    .header-title {
+        order: 1;
+    }
     nav {
+        order: 2;
         gap: 24px;
+        justify-content: center;
+    }
+    #theme-toggle {
+        order: 3;
     }
 }

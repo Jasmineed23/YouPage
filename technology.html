@@ -40,6 +40,90 @@
             box-shadow: 0 2px 8px rgba(126,87,194,0.07);
             border-left: 4px solid #7e57c2;
         }
+        
+        .tech-photo-container {
+            position: relative;
+            display: inline-block;
+            animation: techFloat 6s ease-in-out infinite;
+        }
+        
+        .tech-photo {
+            max-width: 680px;
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(100,100,100,0.15);
+            object-fit: cover;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .tech-photo:hover {
+            transform: scale(1.05) rotate(1deg);
+            box-shadow: 0 15px 60px rgba(126, 87, 194, 0.4);
+            border-radius: 20px;
+        }
+        
+        .tech-photo-container::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
+            background: linear-gradient(45deg, #7e57c2, #b39ddb, #e1bee7, #7e57c2, #d1c4e9);
+            border-radius: 24px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            background-size: 400% 400%;
+            animation: techGradientShift 4s ease infinite;
+        }
+        
+        .tech-photo-container:hover::before {
+            opacity: 1;
+        }
+        
+        .tech-photo-container::after {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            right: -15px;
+            bottom: -15px;
+            background: linear-gradient(45deg, rgba(126, 87, 194, 0.3), rgba(179, 157, 219, 0.3));
+            border-radius: 31px;
+            z-index: -2;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            filter: blur(20px);
+        }
+        
+        .tech-photo-container:hover::after {
+            opacity: 1;
+        }
+        
+        @keyframes techFloat {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+        
+        @keyframes techGradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -54,8 +138,15 @@
                 <a href="https://www.canva.com/design/DAGpPWuxX_w/2hrfaSk87vrdgNJLrVU-Xw/edit?utm_content=DAGpPWuxX_w&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" style="display:inline-block; padding:14px 32px; background:#7e57c2; color:#fff; border-radius:18px; font-weight:700; font-size:1.1em; text-decoration:none; box-shadow:0 2px 8px rgba(126,87,194,0.13); transition:background 0.2s;">View My Presentation Deck</a>
             </div>
     </div>
+    <div style="text-align:left; margin-top:32px;">
+        <div class="tech-photo-container">
+            <img src="images/Hippa cover.jpg" alt="HIPAA Cover" class="tech-photo">
+        </div>
+    </div>
     <div style="text-align:right; margin-top:24px;">
-        <img src="images/Security cover.jpg" alt="Security Cover" style="max-width:680px; width:100%; height:auto; border-radius:16px; box-shadow:0 2px 12px rgba(126,87,194,0.13); object-fit:cover; background:#e0eaff;">
+        <div class="tech-photo-container">
+            <img src="images/Security cover.jpg" alt="Security Cover" class="tech-photo">
+        </div>
     </div>
 </body>
 </html>

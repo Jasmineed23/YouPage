@@ -6,6 +6,110 @@
     <title>Business - Jasmine Edmondson</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .business-photo-container {
+            position: relative;
+            display: inline-block;
+            animation: businessFloat 6s ease-in-out infinite;
+            margin-top: 32px;
+        }
+        
+        .business-photo {
+            max-width: 450px;
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(100,100,100,0.15);
+            object-fit: cover;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .business-photo-large {
+            max-width: 600px;
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(100,100,100,0.15);
+            object-fit: cover;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .business-photo:hover {
+            transform: scale(1.05) rotate(1deg);
+            box-shadow: 0 15px 60px rgba(126, 87, 194, 0.4);
+            border-radius: 20px;
+        }
+        
+        .business-photo-large:hover {
+            transform: scale(1.05) rotate(1deg);
+            box-shadow: 0 15px 60px rgba(126, 87, 194, 0.4);
+            border-radius: 20px;
+        }
+        
+        .business-photo-container::before {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: -6px;
+            right: -6px;
+            bottom: -6px;
+            background: linear-gradient(45deg, #7e57c2, #b39ddb, #e1bee7, #7e57c2, #d1c4e9);
+            border-radius: 22px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            background-size: 400% 400%;
+            animation: businessGradientShift 4s ease infinite;
+        }
+        
+        .business-photo-container:hover::before {
+            opacity: 1;
+        }
+        
+        .business-photo-container::after {
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: -12px;
+            right: -12px;
+            bottom: -12px;
+            background: linear-gradient(45deg, rgba(126, 87, 194, 0.3), rgba(179, 157, 219, 0.3));
+            border-radius: 28px;
+            z-index: -2;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            filter: blur(15px);
+        }
+        
+        .business-photo-container:hover::after {
+            opacity: 1;
+        }
+        
+        @keyframes businessFloat {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        @keyframes businessGradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
 </head>
 <body style="font-size:24px;">
     <header>
@@ -36,6 +140,26 @@
                     <li>Experienced firsthand how open communication, adaptability, and collaboration drive project success.</li>
                     <li>Achieved runner-up in the Medline presentation, a testament to the hard work, creativity, and passion my team poured into the project.</li>
                 </ul>
+                <div style="text-align:center; margin-top:32px;">
+                    <div class="business-photo-container">
+                        <img src="images/image26.jpeg" alt="Business Project" class="business-photo">
+                    </div>
+                </div>
+                <div style="text-align:center; margin-top:32px;">
+                    <div class="business-photo-container">
+                        <img src="images/medtrack-logo.jpg" alt="MedTrack Logo" class="business-photo">
+                    </div>
+                </div>
+                <div style="text-align:left; margin-top:32px;">
+                    <div class="business-photo-container">
+                        <img src="images/Medline1cover.jpg" alt="Medline Project" class="business-photo">
+                    </div>
+                </div>
+                <div style="text-align:right; margin-top:32px;">
+                    <div class="business-photo-container">
+                        <img src="images/Medline2cover.jpg" alt="Medline Project 2" class="business-photo-large">
+                    </div>
+                </div>
             </div>
             <!-- Business image removed -->
         </section>

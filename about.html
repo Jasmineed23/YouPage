@@ -28,6 +28,273 @@
             object-fit: cover;
             background: #e0eaff;
         }
+        
+        .about-photo-container {
+            position: relative;
+            display: inline-block;
+            animation: aboutFloat 6s ease-in-out infinite;
+        }
+        
+        .about-photo {
+            width: 360px;
+            height: 432px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(100,100,100,0.15);
+            object-fit: cover;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .about-photo:hover {
+            transform: scale(1.08) rotate(3deg);
+            box-shadow: 0 15px 60px rgba(126, 87, 194, 0.4);
+            border-radius: 25px;
+        }
+        
+        .about-photo-container::before {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: -6px;
+            right: -6px;
+            bottom: -6px;
+            background: linear-gradient(45deg, #7e57c2, #b39ddb, #e1bee7, #7e57c2, #d1c4e9);
+            border-radius: 26px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            background-size: 400% 400%;
+            animation: aboutGradientShift 4s ease infinite;
+        }
+        
+        .about-photo-container:hover::before {
+            opacity: 1;
+        }
+        
+        .about-photo-container::after {
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: -12px;
+            right: -12px;
+            bottom: -12px;
+            background: linear-gradient(45deg, rgba(126, 87, 194, 0.3), rgba(179, 157, 219, 0.3));
+            border-radius: 32px;
+            z-index: -2;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            filter: blur(15px);
+        }
+        
+        .about-photo-container:hover::after {
+            opacity: 1;
+        }
+        
+        @keyframes aboutFloat {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-6px) rotate(1deg);
+            }
+            50% {
+                transform: translateY(-12px) rotate(0deg);
+            }
+            75% {
+                transform: translateY(-6px) rotate(-1deg);
+            }
+        }
+        
+        @keyframes aboutGradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+        .about-left {
+            padding: 15px;
+        }
+        
+        .lipgloss-photo-container {
+            position: relative;
+            display: inline-block;
+            animation: lipglossFloat 6s ease-in-out infinite;
+        }
+        
+        .lipgloss-photo {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(100,100,100,0.15);
+            object-fit: cover;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .lipgloss-photo:hover {
+            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 15px 60px rgba(126, 87, 194, 0.4);
+            border-radius: 20px;
+        }
+        
+        .lipgloss-photo-container::before {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: -6px;
+            right: -6px;
+            bottom: -6px;
+            background: linear-gradient(45deg, #7e57c2, #b39ddb, #e1bee7, #7e57c2, #d1c4e9);
+            border-radius: 22px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            background-size: 400% 400%;
+            animation: lipglossGradientShift 4s ease infinite;
+        }
+        
+        .lipgloss-photo-container:hover::before {
+            opacity: 1;
+        }
+        
+        .lipgloss-photo-container::after {
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: -12px;
+            right: -12px;
+            bottom: -12px;
+            background: linear-gradient(45deg, rgba(126, 87, 194, 0.3), rgba(179, 157, 219, 0.3));
+            border-radius: 28px;
+            z-index: -2;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            filter: blur(15px);
+        }
+        
+        .lipgloss-photo-container:hover::after {
+            opacity: 1;
+        }
+        
+        @keyframes lipglossFloat {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        
+        @keyframes lipglossGradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+        .music-photo-container {
+            position: relative;
+            display: inline-block;
+            animation: musicFloat 6s ease-in-out infinite;
+        }
+        
+        .music-photo {
+            max-width: 380px;
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 0 8px 32px rgba(100,100,100,0.15);
+            object-fit: cover;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .music-photo:hover {
+            transform: scale(1.05) rotate(-2deg);
+            box-shadow: 0 15px 60px rgba(126, 87, 194, 0.4);
+            border-radius: 20px;
+        }
+        
+        .music-photo-container::before {
+            content: '';
+            position: absolute;
+            top: -6px;
+            left: -6px;
+            right: -6px;
+            bottom: -6px;
+            background: linear-gradient(45deg, #7e57c2, #b39ddb, #e1bee7, #7e57c2, #d1c4e9);
+            border-radius: 22px;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            background-size: 400% 400%;
+            animation: musicGradientShift 4s ease infinite;
+        }
+        
+        .music-photo-container:hover::before {
+            opacity: 1;
+        }
+        
+        .music-photo-container::after {
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: -12px;
+            right: -12px;
+            bottom: -12px;
+            background: linear-gradient(45deg, rgba(126, 87, 194, 0.3), rgba(179, 157, 219, 0.3));
+            border-radius: 28px;
+            z-index: -2;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            filter: blur(15px);
+        }
+        
+        .music-photo-container:hover::after {
+            opacity: 1;
+        }
+        
+        @keyframes musicFloat {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            25% {
+                transform: translateY(-8px) rotate(0.5deg);
+            }
+            50% {
+                transform: translateY(-15px) rotate(0deg);
+            }
+            75% {
+                transform: translateY(-8px) rotate(-0.5deg);
+            }
+        }
+        
+        @keyframes musicGradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
@@ -47,7 +314,19 @@
                     <div class="typewriter" id="typewriter"></div>
                     <p id="about-details" style="margin-top:24px;"></p>
                     <div style="text-align:center; margin-top:24px;">
-                        <img src="images/JasPic.jpg" alt="Jasmine smiling" style="max-width:110px; width:100%; height:auto; border-radius:14px; box-shadow:0 2px 8px rgba(126,87,194,0.13); object-fit:cover; background:#e0eaff;">
+                        <div class="about-photo-container">
+                            <img src="images/JasPic.jpg" alt="Jasmine smiling" class="about-photo">
+                        </div>
+                    </div>
+                    <div style="text-align:left; margin-top:32px;">
+                        <div class="lipgloss-photo-container">
+                            <img src="images/lipgloss cover.jpg" alt="Lip Gloss Collection" class="lipgloss-photo">
+                        </div>
+                    </div>
+                    <div style="text-align:right; margin-top:32px;">
+                        <div class="music-photo-container">
+                            <img src="images/Music and vibe cover.jpg" alt="Music and Vibes" class="music-photo">
+                        </div>
                     </div>
         </section>
         <section class="about-right">
