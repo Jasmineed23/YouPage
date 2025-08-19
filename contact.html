@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Jasmine Edmondson</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #e05fa8 0%, #f5eaff 100%);
+            min-height: 100vh;
+            margin: 0;
+            font-family: 'Poppins', Arial, sans-serif;
+        }
+        .contact-container {
+            max-width: 500px;
+            background: #fff;
+            margin: 48px auto;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(100,100,100,0.13);
+            padding: 32px 32px 24px 32px;
+        }
+        .contact-container h1 {
+            text-align: center;
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 32px;
+            color: #333;
+        }
+        .contact-form label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+            color: #7e57c2;
+            font-size: 1em;
+        }
+        .contact-row {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 18px;
+        }
+        .contact-row input {
+            flex: 1;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d1c4e9;
+            border-radius: 6px;
+            font-size: 1em;
+            margin-bottom: 18px;
+            font-family: 'Poppins', Arial, sans-serif;
+            background: #f5eaff;
+        }
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .contact-form button {
+            display: block;
+            width: 140px;
+            margin: 0 auto;
+            padding: 12px 0;
+            background: #333;
+            color: #fff;
+            border: none;
+            border-radius: 24px;
+            font-size: 1.1em;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s, box-shadow 0.2s;
+        }
+        .contact-form button:hover {
+            background: #7e57c2;
+            box-shadow: 0 4px 16px rgba(126,87,194,0.15);
+        }
+        .contact-info {
+            text-align: center;
+            margin-bottom: 24px;
+            color: #7e57c2;
+            font-size: 1.05em;
+        }
+    </style>
+</head>
+<body>
+    <nav style="margin:24px 0 0 0; text-align:center;">
+    <a href="index.html" style="padding:10px 28px; background:#7e57c2; color:#fff; border-radius:32px; text-decoration:none; font-weight:700; font-size:1.1em; box-shadow:0 2px 8px rgba(100,100,100,0.10); border:none;">Home</a>
+    </nav>
+    <div class="contact-container">
+        <h1>Contact Me</h1>
+        <div class="contact-info">
+            <div>Email: jedmondson@icstars.org</div>
+            <div>Phone: 773-875-8123</div>
+        </div>
+    <form class="contact-form" action="https://formspree.io/f/xwkzqgqg" method="POST">
+            <div class="contact-row">
+                <div style="flex:1;">
+                    <label for="first-name">First name *</label>
+                    <input type="text" id="first-name" name="first-name" placeholder="First name" required>
+                </div>
+                <div style="flex:1;">
+                    <label for="last-name">Last name *</label>
+                    <input type="text" id="last-name" name="last-name" placeholder="Last name" required>
+                </div>
+            </div>
+            <label for="email">Email address *</label>
+            <input type="email" id="email" name="email" placeholder="Eg. example@email.com" required>
+
+            <label for="phone">Phone number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Eg. 773-875-8123">
+
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" placeholder="Please enter your comments..." required></textarea>
+
+            <button type="submit">Submit &rarr;</button>
+        </form>
+        <div style="text-align:center; margin-top:24px;">
+        </div>
+    </div>
+</body>
+</html>

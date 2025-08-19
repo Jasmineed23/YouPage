@@ -1,0 +1,89 @@
+    <!-- Switch Theme button floating at bottom right -->
+    <div style="display:flex; justify-content:flex-end; align-items:center; margin:32px 0 0 0;">
+        <button id="theme-toggle" aria-label="Toggle dark/light mode" style="padding:10px 28px; background:#7e57c2; color:#fff; border-radius:32px; text-decoration:none; font-weight:700; font-size:1.1em; box-shadow:0 2px 8px rgba(100,100,100,0.10); border:none; cursor:pointer;">🌙 Switch Theme</button>
+    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasmine Edmondson - Portfolio</title>
+        <style>
+                .typewriter {
+                    display: inline-block;
+                    border-right: 2px solid #7e57c2;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    animation: typing 2.5s steps(30, end), blink-caret 0.75s step-end infinite;
+                    font-family: 'Pacifico', cursive;
+                    font-size: 2.3em;
+                    color: #7e57c2;
+                    letter-spacing: 2px;
+                }
+            @keyframes typing {
+                from { width: 0 }
+                to { width: 100% }
+            }
+            @keyframes blink-caret {
+                from, to { border-color: transparent }
+                50% { border-color: #7e57c2; }
+            }
+        </style>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div style="display:flex; justify-content:flex-start; align-items:center; margin:32px 0 0 0;">
+        <button id="theme-toggle" aria-label="Toggle dark/light mode" style="padding:10px 28px; background:#7e57c2; color:#fff; border-radius:32px; text-decoration:none; font-weight:700; font-size:1.1em; box-shadow:0 2px 8px rgba(100,100,100,0.10); border:none; cursor:pointer;">🌙 Switch Theme</button>
+    </div>
+    <header>
+        <div class="header-title">Jasmine Edmondson</div>
+        <nav>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="business.html">Business</a>
+            <a href="technology.html">Technology</a>
+            <a href="career.html">Career</a>
+            <a href="wellness.html">Wellness</a>
+        </nav>
+    </header>
+    <main>
+        <div class="hero">
+            <div class="hero-img">
+                <img src="images/Jasmine Edmondson Headshot (1).jpg" alt="Jasmine Edmondson" class="avatar">
+            </div>
+            <div class="hero-content">
+                    <h1><span class="typewriter" id="hero-typewriter"></span></h1>
+                    <p class="hero-bio">
+                        ✨ Cybersecurity Enthusiast | Emerging Project Manager <br>
+                        💄 Lip Gloss Aficionado | 🎶 Curator of Vibes
+                    </p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-contact">
+            <span>Contact: jedmondson@icstars.org</span>
+            <span>
+                <a href="https://www.linkedin.com/in/jasmine-l-edmondson-478766376/" target="_blank">LinkedIn</a>
+            </span>
+        </div>
+        <div class="footer-copy">&copy; 2025 Jasmine Edmondson</div>
+    </footer>
+    <script>
+        // Typewriter effect for hero text
+        const heroText = "Hi, I'm Jas";
+        const heroTypewriter = document.getElementById('hero-typewriter');
+        let j = 0;
+        function heroType() {
+            if (j < heroText.length) {
+                heroTypewriter.textContent += heroText.charAt(j);
+                j++;
+                setTimeout(heroType, 48);
+            }
+        }
+        window.onload = heroType;
+    </script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

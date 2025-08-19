@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .typewriter {
+                display: inline-block;
+                border-right: 2px solid #7e57c2;
+                white-space: nowrap;
+                overflow: hidden;
+                animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+                font-family: 'Poppins', Arial, sans-serif;
+                font-size: 1.1em;
+                color: #7e57c2;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #7e57c2; }
+        }
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            box-shadow: 0 8px 32px rgba(126,87,194,0.13);
+            object-fit: cover;
+            background: #e0eaff;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body style="font-size:23px;">
+    <header class="about-header">
+        <!-- Search bar removed -->
+        <nav style="margin-top:16px;">
+            <a href="index.html" style="padding:10px 28px; background:#7e57c2; color:#fff; border-radius:32px; text-decoration:none; font-weight:700; font-size:1.1em; box-shadow:0 2px 8px rgba(100,100,100,0.10); border:none;">Home</a>
+        </nav>
+    </header>
+    <main class="about-main">
+        <section class="about-left">
+                    <h1>About Me</h1>
+                    <div class="typewriter" id="typewriter"></div>
+                    <p id="about-details" style="margin-top:24px;"></p>
+                    <div style="text-align:center; margin-top:24px;">
+                        <img src="images/JasPic.jpg" alt="Jasmine smiling" style="max-width:110px; width:100%; height:auto; border-radius:14px; box-shadow:0 2px 8px rgba(126,87,194,0.13); object-fit:cover; background:#e0eaff;">
+                    </div>
+        </section>
+        <section class="about-right">
+            <div class="img-placeholder">
+            </div>
+        </section>
+    </main>
+<script>
+    // Typewriter effect for intro
+    const introText = "Hey, I’m Jasmine — Chicago-based creator, cybersecurity learner, and proud i.c.stars intern. I’m driven by the belief that technology should empower people — not confuse them.";
+    const detailsText = `With a passion for protecting digital spaces, managing complex projects, and solving real-world problems, I bring curiosity, resilience, and collaboration into every environment I step into. My experiences in business consulting, coding, and leadership have taught me how to adapt, lead under pressure, and never lose sight of the human behind the screen. I thrive on learning new technologies, sharpening my technical skills, and applying them in ways that make a tangible impact.<br><br>But beyond the tech world? I’m a beauty lover, lip gloss enthusiast, playlist curator, and someone who believes that confidence, creativity, and self-expression fuel success. I enjoy exploring productivity tools that help me work smarter, stay organized, and deliver high-quality results, and I’m always looking for ways to merge my personal passions with professional growth. Whether I’m learning SQL, analyzing data, managing deliverables, or curating content, I show up fully — and unapologetically.<br><br>I’m always looking for opportunities to grow, collaborate, and innovate. Let’s build, protect, and glow — together.`;
+    const typewriter = document.getElementById('typewriter');
+    const details = document.getElementById('about-details');
+    let i = 0;
+    function type() {
+        if (i < introText.length) {
+            typewriter.textContent += introText.charAt(i);
+            i++;
+            setTimeout(type, 32);
+        } else {
+            details.innerHTML = detailsText;
+        }
+    }
+    window.onload = type;
+</script>
+</body>
+</html>
